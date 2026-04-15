@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\LombaController;
 use App\Http\Controllers\Admin\PenampilanController;
 use App\Http\Controllers\Admin\PameranController;
 use App\Http\Controllers\Admin\FotoKegiatanController;
+use App\Http\Controllers\Admin\KontakSponsorshipController;
 
 // Landing Page
 Route::get('/', [LandingController::class, 'index'])->name('landing');
@@ -46,4 +47,7 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
 
     // Foto Kegiatan
     Route::resource('foto-kegiatan', FotoKegiatanController::class)->except(['show']);
+
+    // Kontak Sponsorship
+    Route::resource('kontak-sponsorship', KontakSponsorshipController::class)->except(['show']);
 });

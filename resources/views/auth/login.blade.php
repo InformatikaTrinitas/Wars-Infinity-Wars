@@ -48,7 +48,7 @@
 <body>
 <div class="login-box">
     <div class="login-brand">
-        <h1>⚔ INFINITY WARS</h1>
+        <h1>INFINITY WARS</h1>
         <p>Panel Admin — SMP Waringin Bandung</p>
     </div>
 

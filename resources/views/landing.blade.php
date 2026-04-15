@@ -214,6 +214,39 @@
         .sponsor-card .sp-placeholder { width:60px; height:60px; background:var(--maroon); border-radius:6px; display:flex; align-items:center; justify-content:center; font-size:1.5rem; }
         .sponsor-card span { font-weight:600; font-size:.9rem; color:var(--light); }
 
+        /* ── KONTAK SPONSORSHIP ── */
+        .kontak-section {
+            background:linear-gradient(135deg, var(--maroon-dark) 0%, #0D0505 50%, var(--green-dark) 100%);
+            position:relative; overflow:hidden;
+        }
+        .kontak-section::before {
+            content:''; position:absolute; inset:0;
+            background:radial-gradient(ellipse at center, rgba(212,175,55,.06) 0%, transparent 70%);
+        }
+        .kontak-inner { position:relative; z-index:1; max-width:800px; margin:0 auto; text-align:center; }
+        .kontak-inner p.lead {
+            font-size:1.05rem; color:#ccc; line-height:1.8; margin-bottom:40px;
+        }
+        .kontak-cards { display:flex; flex-wrap:wrap; gap:20px; justify-content:center; }
+        .kontak-card {
+            background:rgba(255,255,255,.05); border:1px solid rgba(212,175,55,.25);
+            border-radius:12px; padding:24px 32px; min-width:220px;
+            display:flex; flex-direction:column; align-items:center; gap:10px;
+            transition:all .3s;
+        }
+        .kontak-card:hover { border-color:var(--gold); background:rgba(212,175,55,.07); transform:translateY(-4px); }
+        .kontak-card .k-icon { font-size:2rem; }
+        .kontak-card .k-nama { font-weight:700; font-size:1rem; color:var(--light); }
+        .kontak-card .k-nomor {
+            font-size:.95rem; color:var(--gold); font-weight:600; letter-spacing:.5px;
+        }
+        .kontak-card .k-wa {
+            display:inline-flex; align-items:center; gap:6px;
+            background:#25D366; color:#fff; padding:7px 18px; border-radius:20px;
+            font-size:.82rem; font-weight:600; margin-top:4px; transition:opacity .2s;
+        }
+        .kontak-card .k-wa:hover { opacity:.85; }
+
         /* ── FOOTER ── */
         footer {
             background:var(--maroon-dark); border-top:1px solid rgba(212,175,55,.2);
@@ -229,10 +262,41 @@
         .lightbox img { max-width:90vw; max-height:90vh; border-radius:8px; }
         .lightbox-close { position:absolute; top:20px; right:28px; font-size:2rem; color:#fff; cursor:pointer; }
 
+        /* ── BURGER ── */
+        .burger {
+            display:none; flex-direction:column; gap:5px; cursor:pointer;
+            padding:4px; background:none; border:none;
+        }
+        .burger span {
+            display:block; width:24px; height:2px; background:var(--gold);
+            border-radius:2px; transition:all .3s;
+        }
+        .burger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+        .burger.open span:nth-child(2) { opacity:0; }
+        .burger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+
+        .mobile-menu {
+            display:none; position:fixed; top:60px; left:0; right:0;
+            background:rgba(13,5,5,.97); backdrop-filter:blur(12px);
+            border-bottom:1px solid rgba(212,175,55,.2);
+            flex-direction:column; z-index:998; padding:12px 0;
+        }
+        .mobile-menu.open { display:flex; }
+        .mobile-menu a {
+            padding:14px 28px; color:#ccc; font-size:.95rem; font-weight:500;
+            border-bottom:1px solid rgba(255,255,255,.05); transition:all .2s;
+        }
+        .mobile-menu a:hover { color:var(--gold); background:rgba(212,175,55,.05); }
+        .mobile-menu .nav-admin {
+            margin:12px 20px 4px; text-align:center; border-radius:6px;
+            border-bottom:none; background:var(--maroon); color:#fff;
+        }
+
         /* ── RESPONSIVE ── */
         @media(max-width:768px){
             nav { padding:12px 20px; }
             .nav-links { display:none; }
+            .burger { display:flex; }
             section { padding:60px 20px; }
             .about-grid, .two-col { grid-template-columns:1fr; }
             .hero h1 { font-size:3rem; }
@@ -251,9 +315,25 @@
         <li><a href="#pameran">Pameran</a></li>
         <li><a href="#foto">Galeri</a></li>
         <li><a href="#sponsor">Sponsor</a></li>
+        <li><a href="#kontak-sponsor">Sponsorship</a></li>
     </ul>
-    <a href="{{ route('login') }}" class="nav-admin">Admin</a>
+    <a href="{{ route('login') }}" class="nav-admin" id="nav-admin-desktop">Admin</a>
+    <button class="burger" id="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+    </button>
 </nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+    <a href="#about"      onclick="closeMenu()">Tentang</a>
+    <a href="#guest-star" onclick="closeMenu()">Guest Star</a>
+    <a href="#lomba"      onclick="closeMenu()">Lomba & Penampilan</a>
+    <a href="#pameran"    onclick="closeMenu()">Pameran</a>
+    <a href="#foto"       onclick="closeMenu()">Galeri</a>
+    <a href="#sponsor"       onclick="closeMenu()">Sponsor</a>
+    <a href="#kontak-sponsor" onclick="closeMenu()">Sponsorship</a>
+    <a href="{{ route('login') }}" class="nav-admin">Admin</a>
+</div>
 
 <!-- HERO -->
 <section class="hero" id="home">
@@ -449,6 +529,32 @@
 </section>
 @endif
 
+<!-- KONTAK SPONSORSHIP -->
+@if($kontakSponsorships->count())
+<section class="kontak-section" id="kontak-sponsor">
+    <div class="kontak-inner">
+        <div class="section-header">
+            <span class="section-tag tag-gold">Bergabung Bersama Kami</span>
+            <h2>INGIN MENJADI SPONSOR?</h2>
+            <p>Dukung generasi muda SMP Waringin Bandung dalam menampilkan karya dan bakat terbaik mereka. Hubungi kami untuk informasi sponsorship.</p>
+            <div class="divider"></div>
+        </div>
+        <div class="kontak-cards">
+            @foreach($kontakSponsorships as $kontak)
+            <div class="kontak-card">
+                <div class="k-icon">📞</div>
+                <div class="k-nama">{{ $kontak->nama }}</div>
+                <div class="k-nomor">{{ $kontak->nomor }}</div>
+                <a href="https://wa.me/{{ preg_replace('/\D/', '', $kontak->nomor) }}" target="_blank" class="k-wa">
+                    <span>💬</span> WhatsApp
+                </a>
+            </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+@endif
+
 <!-- FOOTER -->
 <footer>
     <h3>INFINITY WARS</h3>
@@ -466,6 +572,27 @@
 </div>
 
 <script>
+    // Burger menu
+    const burger = document.getElementById('burger');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    burger.addEventListener('click', () => {
+        burger.classList.toggle('open');
+        mobileMenu.classList.toggle('open');
+    });
+
+    function closeMenu() {
+        burger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+    }
+
+    // Tutup menu saat klik di luar
+    document.addEventListener('click', (e) => {
+        if (!burger.contains(e.target) && !mobileMenu.contains(e.target)) {
+            closeMenu();
+        }
+    });
+
     // Particles
     const container = document.getElementById('particles');
     for (let i = 0; i < 40; i++) {

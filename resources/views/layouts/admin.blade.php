@@ -181,6 +181,11 @@
                 <span class="icon">📷</span> Foto Kegiatan
             </a>
         </div>
+        <div class="nav-item">
+            <a href="{{ route('admin.kontak-sponsorship.index') }}" class="{{ request()->routeIs('admin.kontak-sponsorship.*') ? 'active' : '' }}">
+                <span class="icon">📞</span> Kontak Sponsorship
+            </a>
+        </div>
         <div class="nav-section">Akun</div>
         <div class="nav-item">
             <a href="{{ route('admin.password.form') }}" class="{{ request()->routeIs('admin.password.*') ? 'active' : '' }}">
