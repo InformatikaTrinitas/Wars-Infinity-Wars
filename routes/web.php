@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\PenampilanController;
 use App\Http\Controllers\Admin\PameranController;
 use App\Http\Controllers\Admin\FotoKegiatanController;
 use App\Http\Controllers\Admin\KontakSponsorshipController;
+use App\Http\Controllers\Admin\StandMakananController;
 
 // Landing Page
 Route::get('/', [LandingController::class, 'index'])->name('landing');
@@ -50,4 +51,7 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
 
     // Kontak Sponsorship
     Route::resource('kontak-sponsorship', KontakSponsorshipController::class)->except(['show']);
+
+    // Stand Makanan
+    Route::resource('stand-makanan', StandMakananController::class)->except(['show']);
 });

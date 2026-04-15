@@ -214,6 +214,26 @@
         .sponsor-card .sp-placeholder { width:60px; height:60px; background:var(--maroon); border-radius:6px; display:flex; align-items:center; justify-content:center; font-size:1.5rem; }
         .sponsor-card span { font-weight:600; font-size:.9rem; color:var(--light); }
 
+        /* ── STAND MAKANAN ── */
+        .stand-makanan { background:linear-gradient(135deg,rgba(26,107,42,.08),rgba(107,15,26,.08)); }
+        .stand-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:20px; max-width:1100px; margin:0 auto; }
+        .stand-card {
+            background:rgba(255,255,255,.04); border:1px solid rgba(26,107,42,.3);
+            border-radius:12px; overflow:hidden; transition:all .3s;
+        }
+        .stand-card:hover { transform:translateY(-5px); border-color:var(--green-light); box-shadow:0 10px 32px rgba(26,107,42,.2); }
+        .stand-card .stand-img {
+            width:100%; height:160px; object-fit:cover;
+        }
+        .stand-card .stand-placeholder {
+            width:100%; height:160px; background:var(--green-dark);
+            display:flex; align-items:center; justify-content:center; font-size:3.5rem;
+        }
+        .stand-card .stand-name {
+            padding:14px 16px; font-weight:600; font-size:.95rem;
+            color:var(--light); text-align:center;
+        }
+
         /* ── KONTAK SPONSORSHIP ── */
         .kontak-section {
             background:linear-gradient(135deg, var(--maroon-dark) 0%, #0D0505 50%, var(--green-dark) 100%);
@@ -315,6 +335,7 @@
         <li><a href="#pameran">Pameran</a></li>
         <li><a href="#foto">Galeri</a></li>
         <li><a href="#sponsor">Sponsor</a></li>
+        <li><a href="#stand-makanan">Kuliner</a></li>
         <li><a href="#kontak-sponsor">Sponsorship</a></li>
     </ul>
     <a href="{{ route('login') }}" class="nav-admin" id="nav-admin-desktop">Admin</a>
@@ -330,7 +351,8 @@
     <a href="#lomba"      onclick="closeMenu()">Lomba & Penampilan</a>
     <a href="#pameran"    onclick="closeMenu()">Pameran</a>
     <a href="#foto"       onclick="closeMenu()">Galeri</a>
-    <a href="#sponsor"       onclick="closeMenu()">Sponsor</a>
+    <a href="#sponsor"        onclick="closeMenu()">Sponsor</a>
+    <a href="#stand-makanan"  onclick="closeMenu()">Kuliner</a>
     <a href="#kontak-sponsor" onclick="closeMenu()">Sponsorship</a>
     <a href="{{ route('login') }}" class="nav-admin">Admin</a>
 </div>
@@ -471,7 +493,6 @@
     <div class="pameran-grid">
         @foreach($pamerans as $pameran)
         <div class="pameran-card">
-            <div class="icon">🖼</div>
             <h4>{{ $pameran->nama_kelompok_pameran }}</h4>
         </div>
         @endforeach
@@ -523,6 +544,30 @@
                 <div class="sp-placeholder">🤝</div>
             @endif
             <span>{{ $sponsor->nama }}</span>
+        </div>
+        @endforeach
+    </div>
+</section>
+@endif
+
+<!-- STAND MAKANAN -->
+@if($standMakanans->count())
+<section class="stand-makanan" id="stand-makanan">
+    <div class="section-header">
+        <span class="section-tag tag-green">Kuliner</span>
+        <h2>STAND MAKANAN</h2>
+        <p>Nikmati berbagai pilihan kuliner lezat di Infinity Wars</p>
+        <div class="divider"></div>
+    </div>
+    <div class="stand-grid">
+        @foreach($standMakanans as $stand)
+        <div class="stand-card">
+            @if($stand->foto)
+                <img class="stand-img" src="{{ asset('storage/'.$stand->foto) }}" alt="{{ $stand->nama }}">
+            @else
+                <div class="stand-placeholder">🍜</div>
+            @endif
+            <div class="stand-name">{{ $stand->nama }}</div>
         </div>
         @endforeach
     </div>

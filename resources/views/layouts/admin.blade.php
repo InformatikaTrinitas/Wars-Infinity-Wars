@@ -140,7 +140,7 @@
 
 <aside class="sidebar">
     <div class="sidebar-brand">
-        <h1>⚔ INFINITY WARS</h1>
+        <h1>INFINITY WARS</h1>
         <p>SMP Waringin Bandung</p>
     </div>
     <nav class="sidebar-nav">
@@ -179,6 +179,11 @@
         <div class="nav-item">
             <a href="{{ route('admin.foto-kegiatan.index') }}" class="{{ request()->routeIs('admin.foto-kegiatan.*') ? 'active' : '' }}">
                 <span class="icon">📷</span> Foto Kegiatan
+            </a>
+        </div>
+        <div class="nav-item">
+            <a href="{{ route('admin.stand-makanan.index') }}" class="{{ request()->routeIs('admin.stand-makanan.*') ? 'active' : '' }}">
+                <span class="icon">🍜</span> Stand Makanan
             </a>
         </div>
         <div class="nav-item">

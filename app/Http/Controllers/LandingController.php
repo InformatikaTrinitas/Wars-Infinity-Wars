@@ -9,6 +9,7 @@ use App\Models\Penampilan;
 use App\Models\Pameran;
 use App\Models\FotoKegiatan;
 use App\Models\KontakSponsorship;
+use App\Models\StandMakanan;
 
 class LandingController extends Controller
 {
@@ -22,6 +23,7 @@ class LandingController extends Controller
             'pamerans'           => Pameran::all(),
             'fotoKegiatans'      => FotoKegiatan::orderBy('tahun', 'desc')->get()->groupBy('tahun'),
             'kontakSponsorships' => KontakSponsorship::all(),
+            'standMakanans'      => StandMakanan::all(),
         ]);
     }
 }
