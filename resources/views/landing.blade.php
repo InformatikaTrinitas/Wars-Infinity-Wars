@@ -300,6 +300,17 @@
         .footer-link-ig:hover { border-color:#f472b6; background:linear-gradient(135deg,rgba(131,58,180,.4),rgba(253,29,29,.3),rgba(252,176,69,.3)); }
         footer .copy { margin-top:20px; color:#555; font-size:.78rem; border-top:1px solid #333; padding-top:16px; }
 
+        /* ── LAZY LOAD ── */
+        img.lazy {
+            opacity:0;
+            transition:opacity .5s ease, transform .5s ease;
+            transform:translateY(10px);
+        }
+        img.lazy.loaded {
+            opacity:1;
+            transform:translateY(0);
+        }
+
         /* ── LIGHTBOX ── */
         .lightbox { display:none; position:fixed; inset:0; background:rgba(0,0,0,.92); z-index:9999; align-items:center; justify-content:center; }
         .lightbox.active { display:flex; }
@@ -457,7 +468,7 @@
         @foreach($guestStars as $gs)
         <div class="gs-card">
             @if($gs->foto)
-                <img class="gs-photo" src="{{ asset('storage/'.$gs->foto) }}" alt="{{ $gs->nama }}">
+                <img class="gs-photo lazy" data-src="{{ asset('storage/'.$gs->foto) }}" src="" alt="{{ $gs->nama }}" loading="lazy">
             @else
                 <div class="gs-placeholder">⭐</div>
             @endif
@@ -540,7 +551,7 @@
             <div class="foto-grid">
                 @foreach($fotos as $foto)
                 <div class="foto-item" onclick="openLightbox('{{ asset('storage/'.$foto->foto) }}')">
-                    <img src="{{ asset('storage/'.$foto->foto) }}" alt="Foto {{ $tahun }}" loading="lazy">
+                    <img class="lazy" data-src="{{ asset('storage/'.$foto->foto) }}" src="" alt="Foto {{ $tahun }}" loading="lazy">
                 </div>
                 @endforeach
             </div>
@@ -563,7 +574,7 @@
         @foreach($sponsors as $sponsor)
         <div class="sponsor-card">
             @if($sponsor->foto)
-                <img src="{{ asset('storage/'.$sponsor->foto) }}" alt="{{ $sponsor->nama }}">
+                <img class="lazy" data-src="{{ asset('storage/'.$sponsor->foto) }}" src="" alt="{{ $sponsor->nama }}" loading="lazy">
             @else
                 <div class="sp-placeholder">🤝</div>
             @endif
@@ -587,7 +598,7 @@
         @foreach($standMakanans as $stand)
         <div class="stand-card">
             @if($stand->foto)
-                <img class="stand-img" src="{{ asset('storage/'.$stand->foto) }}" alt="{{ $stand->nama }}">
+                <img class="stand-img lazy" data-src="{{ asset('storage/'.$stand->foto) }}" src="" alt="{{ $stand->nama }}" loading="lazy">
             @else
                 <div class="stand-placeholder">🍜</div>
             @endif
@@ -671,6 +682,25 @@
             closeMenu();
         }
     });
+
+    // Lazy load dengan Intersection Observer
+    const lazyImages = document.querySelectorAll('img.lazy');
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.onload = () => img.classList.add('loaded');
+                img.onerror = () => img.classList.add('loaded'); // tetap tampil walau error
+                observer.unobserve(img);
+            }
+        });
+    }, {
+        rootMargin: '100px 0px', // mulai load 100px sebelum masuk viewport
+        threshold: 0.01
+    });
+
+    lazyImages.forEach(img => imageObserver.observe(img));
 
     // Particles
     const container = document.getElementById('particles');
