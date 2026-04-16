@@ -34,6 +34,7 @@
 
     <!-- ── STRUCTURED DATA (JSON-LD) ── -->
     <script type="application/ld+json">
+    @verbatim
     {
         "@context": "https://schema.org",
         "@type": "Event",
@@ -55,8 +56,9 @@
                 "addressCountry": "ID"
             }
         },
-        "url": "{{ url('/') }}"
+        "url": "https://smpwaringinbdg.sch.id"
     }
+    @endverbatim
     </script>
 
     <link rel="icon" type="image/png" href="/favicon.png">
