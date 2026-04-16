@@ -3,7 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infinity Wars — SMP Waringin Bandung</title>
+
+    <!-- ── SEO PRIMARY ── -->
+    <title>Infinity Wars — SMP Waringin Bandung | Karya & Bakat Siswa</title>
+    <meta name="description" content="Infinity Wars adalah ajang tahunan SMP Waringin Bandung untuk menampilkan karya, bakat, dan kreativitas para siswa. Lomba, penampilan seni, pameran, guest star, dan stand makanan.">
+    <meta name="keywords" content="Infinity Wars, SMP Waringin Bandung, SMP Waringin, smpwaringinbdg, acara sekolah Bandung, lomba siswa Bandung, penampilan seni SMP, pameran karya siswa, bakat siswa Bandung, kegiatan sekolah Bandung, event SMP Bandung, Infinity Wars SMP Waringin">
+    <meta name="author" content="SMP Waringin Bandung">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <link rel="canonical" href="{{ url('/') }}">
+
+    <!-- ── OPEN GRAPH (Facebook, WhatsApp) ── -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url('/') }}">
+    <meta property="og:title" content="Infinity Wars — SMP Waringin Bandung">
+    <meta property="og:description" content="Ajang tahunan SMP Waringin Bandung untuk menampilkan karya, bakat, dan kreativitas para siswa. Lomba, penampilan seni, pameran, dan lebih banyak lagi.">
+    <meta property="og:image" content="{{ url('/favicon.png') }}">
+    <meta property="og:locale" content="id_ID">
+    <meta property="og:site_name" content="Infinity Wars SMP Waringin">
+
+    <!-- ── TWITTER CARD ── -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Infinity Wars — SMP Waringin Bandung">
+    <meta name="twitter:description" content="Ajang tahunan SMP Waringin Bandung untuk menampilkan karya, bakat, dan kreativitas para siswa.">
+    <meta name="twitter:image" content="{{ url('/favicon.png') }}">
+
+    <!-- ── GEO ── -->
+    <meta name="geo.region" content="ID-JB">
+    <meta name="geo.placename" content="Bandung, Jawa Barat, Indonesia">
+
+    <!-- ── STRUCTURED DATA (JSON-LD) ── -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "Infinity Wars",
+        "description": "Ajang tahunan SMP Waringin Bandung untuk menampilkan karya, bakat, dan kreativitas para siswa melalui lomba, penampilan seni, dan pameran.",
+        "organizer": {
+            "@type": "EducationalOrganization",
+            "name": "SMP Waringin Bandung",
+            "url": "https://smpwaringinbdg.sch.id",
+            "sameAs": "https://www.instagram.com/smpwaringinbandung/"
+        },
+        "location": {
+            "@type": "Place",
+            "name": "SMP Waringin Bandung",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Bandung",
+                "addressRegion": "Jawa Barat",
+                "addressCountry": "ID"
+            }
+        },
+        "url": "{{ url('/') }}"
+    }
+    </script>
+
     <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="shortcut icon" href="/favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -637,7 +692,7 @@
 
 <!-- FOOTER -->
 <footer>
-    <h3>⚔ INFINITY WARS</h3>
+    <h3>INFINITY WARS</h3>
     <p>SMP Waringin Bandung</p>
     <p>Menampilkan Karya & Bakat Para Siswa</p>
 
