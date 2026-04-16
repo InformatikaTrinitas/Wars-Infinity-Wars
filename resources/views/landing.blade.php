@@ -180,16 +180,19 @@
 
         /* ── PAMERAN ── */
         .pameran { background:var(--dark); }
-        .pameran-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:20px; max-width:1100px; margin:0 auto; }
+        .pameran-grid {
+            display:flex; flex-wrap:wrap; gap:20px;
+            justify-content:center; max-width:1100px; margin:0 auto;
+        }
         .pameran-card {
             background:linear-gradient(135deg,rgba(26,107,42,.15),rgba(26,107,42,.1));
             border:1px solid rgba(26,107,42,.3); border-radius:10px; padding:24px;
             text-align:center; transition:all .3s;
+            width:220px; flex-shrink:0;
         }
         .pameran-card:hover { transform:translateY(-4px); border-color:var(--green-light); }
         .pameran-card .icon { font-size:2.5rem; margin-bottom:12px; }
         .pameran-card h4 { font-size:.9rem; font-weight:600; color:var(--light); }
-
         /* ── FOTO KEGIATAN ── */
         .foto-kegiatan { background:linear-gradient(135deg,rgba(26,107,42,.1),rgba(26,107,42,.1)); }
         .tahun-section { margin-bottom:48px; }
@@ -218,10 +221,14 @@
 
         /* ── STAND MAKANAN ── */
         .stand-makanan { background:linear-gradient(135deg,rgba(26,107,42,.08),rgba(26,107,42,.08)); }
-        .stand-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:20px; max-width:1100px; margin:0 auto; }
+        .stand-grid {
+            display:flex; flex-wrap:wrap; gap:20px;
+            justify-content:center; max-width:1100px; margin:0 auto;
+        }
         .stand-card {
             background:rgba(255,255,255,.04); border:1px solid rgba(26,107,42,.3);
             border-radius:12px; overflow:hidden; transition:all .3s;
+            width:220px; flex-shrink:0;
         }
         .stand-card:hover { transform:translateY(-5px); border-color:var(--green-light); box-shadow:0 10px 32px rgba(26,107,42,.2); }
         .stand-card .stand-img {
