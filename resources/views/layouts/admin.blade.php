@@ -9,17 +9,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --maroon:      #6B0F1A;
-            --maroon-dark: #4A0A12;
-            --maroon-light:#8B1A2A;
+            --maroon:      #2E7D4F;
+            --maroon-dark: #1B5E38;
+            --maroon-light:#3DA066;
             --green:       #1A6B2A;
             --green-dark:  #0F4A1A;
             --green-light: #2A8B3A;
             --gold:        #D4AF37;
             --gold-light:  #F0D060;
             --white:       #FFFFFF;
-            --light:       #F8F4F0;
-            --dark:        #1A0A0A;
+            --light:       #F0F8F4;
+            --dark:        #0A1A0F;
             --sidebar-w:   260px;
             --topbar-h:    60px;
         }
@@ -81,7 +81,7 @@
         }
         .nav-item a:hover,
         .nav-item a.active {
-            background:rgba(107,15,26,.5); color:var(--gold);
+            background:rgba(26,107,42,.5); color:var(--gold);
             border-left-color:var(--gold);
         }
         .nav-item a .icon { font-size:1rem; width:20px; text-align:center; flex-shrink:0; }
@@ -106,7 +106,7 @@
 
         /* ── CARDS ── */
         .card {
-            background:#1e1010; border:1px solid #333; border-radius:10px;
+            background:#0e1e14; border:1px solid #1a3a24; border-radius:10px;
             padding:24px; margin-bottom:24px;
         }
         .card-header {
@@ -143,7 +143,7 @@
         .form-group label { display:block; margin-bottom:6px; font-weight:500; font-size:.88rem; color:#ccc; }
         .form-control {
             width:100%; padding:10px 14px; border-radius:6px;
-            border:1px solid #444; background:#2a1010; color:#fff;
+            border:1px solid #444; background:#0a2014; color:#fff;
             font-family:'Poppins',sans-serif; font-size:.88rem;
         }
         .form-control:focus { outline:none; border-color:var(--gold); }
@@ -152,15 +152,15 @@
         /* ── TABLE ── */
         .table-wrap { overflow-x:auto; }
         table { width:100%; border-collapse:collapse; }
-        table th, table td { padding:12px 16px; text-align:left; border-bottom:1px solid #2a1a1a; font-size:.88rem; }
+        table th, table td { padding:12px 16px; text-align:left; border-bottom:1px solid #1a3a24; font-size:.88rem; }
         table th { background:var(--maroon-dark); color:var(--gold); font-weight:600; }
-        table tr:hover td { background:rgba(107,15,26,.15); }
+        table tr:hover td { background:rgba(26,107,42,.15); }
         table td img { width:50px; height:50px; object-fit:cover; border-radius:6px; border:2px solid var(--maroon); }
 
         /* ── STATS ── */
         .stats-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:16px; margin-bottom:28px; }
         .stat-card {
-            background:linear-gradient(135deg,var(--maroon-dark),#2a0a0a);
+            background:linear-gradient(135deg,var(--maroon-dark),#0a2014);
             border:1px solid var(--maroon); border-radius:10px; padding:20px; text-align:center;
         }
         .stat-card .num   { font-size:2rem; font-weight:700; color:var(--gold); }
@@ -168,7 +168,7 @@
 
         /* ── PAGINATION ── */
         .pagination { display:flex; gap:6px; margin-top:20px; flex-wrap:wrap; }
-        .pagination a, .pagination span { padding:6px 12px; border-radius:4px; font-size:.82rem; background:#2a1010; color:#ccc; border:1px solid #444; }
+        .pagination a, .pagination span { padding:6px 12px; border-radius:4px; font-size:.82rem; background:#0a2014; color:#ccc; border:1px solid #444; }
         .pagination .active span { background:var(--maroon); color:#fff; border-color:var(--maroon); }
 
         /* ── RESPONSIVE ── */

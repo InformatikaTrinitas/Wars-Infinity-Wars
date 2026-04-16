@@ -8,11 +8,11 @@
     <link rel="shortcut icon" href="/favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
-        :root { --maroon:#6B0F1A; --maroon-dark:#4A0A12; --green:#1A6B2A; --gold:#D4AF37; }
+        :root { --maroon:#2E7D4F; --maroon-dark:#1B5E38; --green:#1A6B2A; --gold:#D4AF37; }
         * { margin:0; padding:0; box-sizing:border-box; }
         body {
             font-family:'Poppins',sans-serif; min-height:100vh;
-            background:linear-gradient(135deg,var(--maroon-dark) 0%,#0D0505 50%,#0A1A0F 100%);
+            background:linear-gradient(135deg,var(--maroon-dark) 0%,#050F08 50%,#0A1A0F 100%);
             display:flex; align-items:center; justify-content:center;
         }
         .login-box {
@@ -32,7 +32,7 @@
         }
         .form-control:focus { outline:none; border-color:var(--gold); }
         .btn-login {
-            width:100%; padding:13px; background:linear-gradient(135deg,var(--maroon),#8B1A2A);
+            width:100%; padding:13px; background:linear-gradient(135deg,var(--maroon),#3DA066);
             color:#fff; border:none; border-radius:8px; font-family:'Poppins',sans-serif;
             font-size:.95rem; font-weight:700; cursor:pointer; letter-spacing:1px;
             transition:all .3s; margin-top:8px;

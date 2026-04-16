@@ -9,17 +9,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --maroon:      #6B0F1A;
-            --maroon-dark: #4A0A12;
-            --maroon-light:#8B1A2A;
+            --maroon:      #2E7D4F;
+            --maroon-dark: #1B5E38;
+            --maroon-light:#3DA066;
             --green:       #1A6B2A;
             --green-dark:  #0F4A1A;
             --green-light: #2A8B3A;
             --gold:        #D4AF37;
             --gold-light:  #F0D060;
             --white:       #FFFFFF;
-            --light:       #F8F4F0;
-            --dark:        #0D0505;
+            --light:       #F0F8F4;
+            --dark:        #050F08;
         }
         * { margin:0; padding:0; box-sizing:border-box; }
         html { scroll-behavior:smooth; }
@@ -84,9 +84,9 @@
             background:linear-gradient(135deg,var(--maroon),var(--maroon-light));
             color:#fff; padding:14px 36px; border-radius:8px; font-weight:700;
             font-size:1rem; letter-spacing:1px; transition:all .3s;
-            box-shadow:0 4px 20px rgba(107,15,26,.5);
+            box-shadow:0 4px 20px rgba(26,107,42,.5);
         }
-        .btn-hero-primary:hover { transform:translateY(-2px); box-shadow:0 8px 30px rgba(107,15,26,.7); }
+        .btn-hero-primary:hover { transform:translateY(-2px); box-shadow:0 8px 30px rgba(26,107,42,.7); }
         .btn-hero-secondary {
             background:linear-gradient(135deg,var(--green-dark),var(--green));
             color:#fff; padding:14px 36px; border-radius:8px; font-weight:700;
@@ -108,7 +108,7 @@
             display:inline-block; padding:4px 16px; border-radius:20px; font-size:.75rem;
             font-weight:600; letter-spacing:2px; text-transform:uppercase; margin-bottom:12px;
         }
-        .tag-maroon { background:rgba(107,15,26,.3); border:1px solid var(--maroon); color:var(--maroon-light); }
+        .tag-maroon { background:rgba(26,107,42,.3); border:1px solid var(--maroon); color:var(--maroon-light); }
         .tag-green  { background:rgba(26,107,42,.3); border:1px solid var(--green); color:var(--green-light); }
         .tag-gold   { background:rgba(212,175,55,.15); border:1px solid var(--gold); color:var(--gold); }
         .section-header h2 {
@@ -123,13 +123,13 @@
         }
 
         /* ── ABOUT ── */
-        .about { background:linear-gradient(135deg,rgba(107,15,26,.1),rgba(26,107,42,.1)); }
+        .about { background:linear-gradient(135deg,rgba(26,107,42,.1),rgba(26,107,42,.1)); }
         .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:40px; max-width:1000px; margin:0 auto; align-items:center; }
         .about-text h3 { font-family:'Cinzel',serif; font-size:1.6rem; color:var(--gold); margin-bottom:16px; }
         .about-text p { color:#bbb; line-height:1.8; margin-bottom:14px; font-size:.95rem; }
         .about-stats { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
         .about-stat {
-            background:rgba(107,15,26,.2); border:1px solid rgba(212,175,55,.2);
+            background:rgba(26,107,42,.2); border:1px solid rgba(212,175,55,.2);
             border-radius:10px; padding:20px; text-align:center;
         }
         .about-stat .num { font-family:'Cinzel',serif; font-size:2rem; color:var(--gold); font-weight:700; }
@@ -140,7 +140,7 @@
         .gs-grid { display:flex; flex-direction:column; gap:16px; max-width:1100px; margin:0 auto; }
         .gs-card {
             display:flex; align-items:center; gap:0;
-            background:linear-gradient(135deg,rgba(107,15,26,.25),rgba(26,107,42,.1));
+            background:linear-gradient(135deg,rgba(26,107,42,.25),rgba(26,107,42,.1));
             border:1px solid rgba(212,175,55,.2); border-radius:12px;
             overflow:hidden; transition:all .3s;
         }
@@ -164,7 +164,7 @@
         }
 
         /* ── LOMBA & PENAMPILAN ── */
-        .lomba-penampilan { background:linear-gradient(135deg,rgba(26,107,42,.08),rgba(107,15,26,.08)); }
+        .lomba-penampilan { background:linear-gradient(135deg,rgba(26,107,42,.08),rgba(26,107,42,.08)); }
         .two-col { display:grid; grid-template-columns:1fr 1fr; gap:40px; max-width:1000px; margin:0 auto; }
         .list-box { background:rgba(255,255,255,.03); border:1px solid #333; border-radius:12px; padding:28px; }
         .list-box h3 { font-family:'Cinzel',serif; font-size:1.2rem; color:var(--gold); margin-bottom:20px; display:flex; align-items:center; gap:10px; }
@@ -182,7 +182,7 @@
         .pameran { background:var(--dark); }
         .pameran-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:20px; max-width:1100px; margin:0 auto; }
         .pameran-card {
-            background:linear-gradient(135deg,rgba(26,107,42,.15),rgba(107,15,26,.1));
+            background:linear-gradient(135deg,rgba(26,107,42,.15),rgba(26,107,42,.1));
             border:1px solid rgba(26,107,42,.3); border-radius:10px; padding:24px;
             text-align:center; transition:all .3s;
         }
@@ -191,7 +191,7 @@
         .pameran-card h4 { font-size:.9rem; font-weight:600; color:var(--light); }
 
         /* ── FOTO KEGIATAN ── */
-        .foto-kegiatan { background:linear-gradient(135deg,rgba(107,15,26,.1),rgba(26,107,42,.1)); }
+        .foto-kegiatan { background:linear-gradient(135deg,rgba(26,107,42,.1),rgba(26,107,42,.1)); }
         .tahun-section { margin-bottom:48px; }
         .tahun-label {
             font-family:'Cinzel',serif; font-size:1.4rem; color:var(--gold);
@@ -217,7 +217,7 @@
         .sponsor-card span { font-weight:600; font-size:.9rem; color:var(--light); }
 
         /* ── STAND MAKANAN ── */
-        .stand-makanan { background:linear-gradient(135deg,rgba(26,107,42,.08),rgba(107,15,26,.08)); }
+        .stand-makanan { background:linear-gradient(135deg,rgba(26,107,42,.08),rgba(26,107,42,.08)); }
         .stand-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:20px; max-width:1100px; margin:0 auto; }
         .stand-card {
             background:rgba(255,255,255,.04); border:1px solid rgba(26,107,42,.3);
@@ -238,7 +238,7 @@
 
         /* ── KONTAK SPONSORSHIP ── */
         .kontak-section {
-            background:linear-gradient(135deg, var(--maroon-dark) 0%, #0D0505 50%, var(--green-dark) 100%);
+            background:linear-gradient(135deg, var(--maroon-dark) 0%, #050F08 50%, var(--green-dark) 100%);
             position:relative; overflow:hidden;
         }
         .kontak-section::before {
@@ -272,10 +272,25 @@
         /* ── FOOTER ── */
         footer {
             background:var(--maroon-dark); border-top:1px solid rgba(212,175,55,.2);
-            padding:40px; text-align:center;
+            padding:48px 40px 32px; text-align:center;
         }
         footer h3 { font-family:'Cinzel',serif; font-size:1.5rem; color:var(--gold); margin-bottom:8px; }
         footer p { color:#aaa; font-size:.85rem; margin-bottom:4px; }
+        .footer-links { display:flex; justify-content:center; gap:20px; margin:20px 0; flex-wrap:wrap; }
+        .footer-link {
+            display:inline-flex; align-items:center; gap:8px;
+            padding:9px 22px; border-radius:8px; font-size:.85rem; font-weight:600;
+            transition:all .25s; border:1px solid transparent;
+        }
+        .footer-link-web {
+            background:rgba(212,175,55,.12); border-color:rgba(212,175,55,.3); color:var(--gold);
+        }
+        .footer-link-web:hover { background:rgba(212,175,55,.22); border-color:var(--gold); }
+        .footer-link-ig {
+            background:linear-gradient(135deg,rgba(131,58,180,.25),rgba(253,29,29,.2),rgba(252,176,69,.2));
+            border-color:rgba(253,29,29,.3); color:#f9a8d4;
+        }
+        .footer-link-ig:hover { border-color:#f472b6; background:linear-gradient(135deg,rgba(131,58,180,.4),rgba(253,29,29,.3),rgba(252,176,69,.3)); }
         footer .copy { margin-top:20px; color:#555; font-size:.78rem; border-top:1px solid #333; padding-top:16px; }
 
         /* ── LIGHTBOX ── */
@@ -604,9 +619,19 @@
 
 <!-- FOOTER -->
 <footer>
-    <h3>INFINITY WARS</h3>
+    <h3>⚔ INFINITY WARS</h3>
     <p>SMP Waringin Bandung</p>
     <p>Menampilkan Karya & Bakat Para Siswa</p>
+
+    <div class="footer-links">
+        <a href="https://smpwaringinbdg.sch.id" target="_blank" rel="noopener" class="footer-link footer-link-web">
+            🌐 smpwaringinbdg.sch.id
+        </a>
+        <a href="https://www.instagram.com/smpwaringinbandung/" target="_blank" rel="noopener" class="footer-link footer-link-ig">
+            📸 @smpwaringinbandung
+        </a>
+    </div>
+
     <div class="copy">
         &copy; {{ date('Y') }} SMP Waringin Bandung. All rights reserved.
     </div>

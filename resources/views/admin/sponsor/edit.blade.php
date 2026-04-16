@@ -19,7 +19,7 @@
             <label>Logo/Foto</label>
             @if($sponsor->foto)
                 <div style="margin-bottom:10px;">
-                    <img src="{{ asset('storage/'.$sponsor->foto) }}" style="width:80px;height:80px;object-fit:contain;border-radius:8px;border:2px solid #6B0F1A;background:#fff;padding:4px;">
+                    <img src="{{ asset('storage/'.$sponsor->foto) }}" style="width:80px;height:80px;object-fit:contain;border-radius:8px;border:2px solid #2E7D4F;background:#fff;padding:4px;">
                 </div>
             @endif
             <input type="file" name="foto" class="form-control" accept="image/*">
