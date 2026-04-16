@@ -78,6 +78,7 @@
         .nav-item a {
             display:flex; align-items:center; gap:10px; padding:11px 20px;
             color:#ccc; font-size:.86rem; transition:all .2s; border-left:3px solid transparent;
+            text-decoration:none;
         }
         .nav-item a:hover,
         .nav-item a.active {
